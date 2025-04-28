@@ -27,7 +27,8 @@ public class ElectricBillingSystem {
             System.out.println("1. Add Customer");
             System.out.println("2. View Customer Records");
             System.out.println("3. Generate Bill");
-            System.out.println("4. Exit");
+           System.out.println("4.Update Customer Details");
+           System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
             sc.nextLine(); 
@@ -96,30 +97,13 @@ public class ElectricBillingSystem {
                       System.out.println("Customer not found.");
                   }
                break;
-               case 5: 
-             System.out.print("Enter Customer ID or Name to search: ");
-             String searchKey = sc.nextLine();
-             boolean foundSearch = false;
-            for (int i = 0; i < customerCount; i++) {
-            if (String.valueOf(customers[i].id).equals(searchKey) || customers[i].name.equalsIgnoreCase(searchKey)) {
-             System.out.println("ID: " + customers[i].id + ", Name: " + customers[i].name + ", Address: " + customers[i].address + ", Meter: " + customers[i].meterNumber + ", Units: " + customers[i].units);
-            foundSearch = true;
-          }
-      }
-        if (!foundSearch) {
-        System.out.println("No matching customer found.");
-      }
-      break;
-   default:
-    System.out.println("Invalid choice. Please try again.");
-}
-           
-                 case 7:
-                    System.out.println("Exiting...");
-                    sc.close();
-                    return;
-                   default:
-                    System.out.println("Invalid choice.");
+    
+         case 5:
+          System.out.println("Exiting...");
+            sc.close();
+            return;
+           default:
+            System.out.println("Invalid choice.");
             }
         }
     }
