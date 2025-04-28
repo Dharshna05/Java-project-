@@ -28,7 +28,7 @@ public class ElectricBillingSystem {
             System.out.println("2. View Customer Records");
             System.out.println("3. Generate Bill");
            System.out.println("4.Update Customer Details");
-           System.out.println("6. Exit");
+           System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
             sc.nextLine(); 
@@ -73,32 +73,34 @@ public class ElectricBillingSystem {
                     }
                     if (!found) System.out.println("Customer not found.");
                     break;
-               case 4:
-                   System.out.print("Enter ID to update:");
-                   int uid=sc.nextInt();
-                   sc.nextLine();
-                   boolean updated =false;
-                      if (customers[i].id == uid) {
-                     System.out.print("Enter new Name: ");
-                     customers[i].name = sc.nextLine();
-                     System.out.print("Enter new Address: ");
-                     customers[i].address = sc.nextLine();
-                     System.out.print("Enter new Meter Number: ");
-                     customers[i].meterNumber = sc.nextLine();
-                     System.out.print("Enter new Units: ");
-                     customers[i].units = sc.nextDouble();
-                     updated = true;
-                    System.out.println("Customer details updated.");
-                          break;
-                      }
-                  }
-                  if(!updated)
-                  {
-                      System.out.println("Customer not found.");
+            case 4:
+       System.out.print("Enter ID to update: ");
+       int uid = sc.nextInt();
+      sc.nextLine(); 
+    boolean updated = false;
+    for (int i = 0; i < customerCount; i++) {
+        if (customers[i].id == uid) {
+            System.out.print("Enter new Name: ");
+            customers[i].name = sc.nextLine();
+            System.out.print("Enter new Address: ");
+            customers[i].address = sc.nextLine();
+            System.out.print("Enter new Meter Number: ");
+            customers[i].meterNumber = sc.nextLine();
+            System.out.print("Enter new Units: ");
+            customers[i].units = sc.nextDouble();
+            
+            updated = true;
+            System.out.println("Customer details updated.");
+            break; 
+        }
+    }
+	
+     if(!updated)
+                 {
+                System.out.println("Customer not found.");
                   }
                break;
-    
-         case 5:
+     case 5:
           System.out.println("Exiting...");
             sc.close();
             return;
