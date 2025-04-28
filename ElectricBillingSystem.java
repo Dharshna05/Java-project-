@@ -72,7 +72,49 @@ public class ElectricBillingSystem {
                     }
                     if (!found) System.out.println("Customer not found.");
                     break;
-                 case 4:
+               case 4:
+                   System.out.print("Enter ID to update:");
+                   int uid=sc.nextInt();
+                   sc.nextLine();
+                   boolean updated =false;
+                      if (customers[i].id == uid) {
+                     System.out.print("Enter new Name: ");
+                     customers[i].name = sc.nextLine();
+                     System.out.print("Enter new Address: ");
+                     customers[i].address = sc.nextLine();
+                     System.out.print("Enter new Meter Number: ");
+                     customers[i].meterNumber = sc.nextLine();
+                     System.out.print("Enter new Units: ");
+                     customers[i].units = sc.nextDouble();
+                     updated = true;
+                    System.out.println("Customer details updated.");
+                          break;
+                      }
+                  }
+                  if(!updated)
+                  {
+                      System.out.println("Customer not found.");
+                  }
+               break;
+               case 5: 
+             System.out.print("Enter Customer ID or Name to search: ");
+             String searchKey = sc.nextLine();
+             boolean foundSearch = false;
+            for (int i = 0; i < customerCount; i++) {
+            if (String.valueOf(customers[i].id).equals(searchKey) || customers[i].name.equalsIgnoreCase(searchKey)) {
+             System.out.println("ID: " + customers[i].id + ", Name: " + customers[i].name + ", Address: " + customers[i].address + ", Meter: " + customers[i].meterNumber + ", Units: " + customers[i].units);
+            foundSearch = true;
+          }
+      }
+        if (!foundSearch) {
+        System.out.println("No matching customer found.");
+      }
+      break;
+   default:
+    System.out.println("Invalid choice. Please try again.");
+}
+           
+                 case 7:
                     System.out.println("Exiting...");
                     sc.close();
                     return;
