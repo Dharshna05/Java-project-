@@ -80,7 +80,7 @@ public class ElectricBillingSystem {
           sc.nextLine(); 
           boolean updated = false;
          for (int i = 0; i < customerCount; i++) {
-        if (customers[i].id == uid) {
+           if (customers[i].id == uid) {
             System.out.print("Enter new Name: ");
             customers[i].name = sc.nextLine();
             System.out.print("Enter new Address: ");
@@ -95,7 +95,7 @@ public class ElectricBillingSystem {
             break; 
         }
     }
-   if(!updated)
+     if(!updated)
                {
                 System.out.println("Customer not found.");
                   }
