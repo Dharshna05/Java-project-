@@ -71,7 +71,8 @@ public class ElectricBillingSystem {
                             System.out.println("Amount: ₹" + amount);
                         }
                     }
-                    if (!found) System.out.println("Customer not found.");
+                    if (!found) 
+		System.out.println("Customer not found.");
                     break;
             case 4:
        System.out.print("Enter ID to update: ");
