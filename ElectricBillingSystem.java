@@ -75,11 +75,11 @@ public class ElectricBillingSystem {
 		System.out.println("Customer not found.");
                     break;
             case 4:
-       System.out.print("Enter ID to update: ");
-       int uid = sc.nextInt();
-      sc.nextLine(); 
-    boolean updated = false;
-    for (int i = 0; i < customerCount; i++) {
+             System.out.print("Enter ID to update: ");
+           int uid = sc.nextInt();
+          sc.nextLine(); 
+          boolean updated = false;
+         for (int i = 0; i < customerCount; i++) {
         if (customers[i].id == uid) {
             System.out.print("Enter new Name: ");
             customers[i].name = sc.nextLine();
@@ -95,13 +95,12 @@ public class ElectricBillingSystem {
             break; 
         }
     }
-	
-     if(!updated)
-                 {
+   if(!updated)
+               {
                 System.out.println("Customer not found.");
                   }
                break;
-     case 5:
+       case 5:
           System.out.println("Exiting...");
             sc.close();
             return;
